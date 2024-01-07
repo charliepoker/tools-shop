@@ -15,6 +15,7 @@ public class HomePage {
     By navPowerTools = By.cssSelector(".show li:nth-of-type(2) .dropdown-item");
     By navSpecialTools = By.cssSelector(".show li:nth-of-type(3) .dropdown-item");
     By navRentals = By.linkText("Rentals");
+    By navSignIn = By.cssSelector("[class] .nav-item:nth-of-type(4) .nav-link");
     By categoriesHandTools = By.cssSelector("#filters .checkbox:nth-child(13) > label:nth-of-type(1) .icheck");
     By hammer = By.cssSelector("#filters .checkbox:nth-child(13) .checkbox:nth-of-type(1) .icheck");
 
@@ -22,6 +23,7 @@ public class HomePage {
     By wrench =  By.cssSelector("#filters .checkbox:nth-child(13) .checkbox:nth-of-type(3) .icheck");
     By screwDriver=  By.cssSelector("#filters .checkbox:nth-child(13) .checkbox:nth-of-type(4) .icheck");
     By pliers =  By.cssSelector("#filters .checkbox:nth-child(13) .checkbox:nth-of-type(5) .icheck");
+    By combinationPlier = By.cssSelector("[data-test='product-01HKH4NQSAHYPNJ4DMVKPJHF76'] .card-title");
     By chisels = By.cssSelector("#filters .checkbox:nth-child(13) .checkbox:nth-of-type(6) .icheck");
     By measures = By.cssSelector("#filters .checkbox:nth-child(13) .checkbox:nth-of-type(7) .icheck");
     By categoriesPowerTools = By.cssSelector("input[value='01HJYP58KNNZ6T13JAZ7DG0HQN']");
@@ -66,6 +68,10 @@ public class HomePage {
         return driver.findElement(navRentals);
     }
 
+    public WebElement getNavSignIn(){
+        return driver.findElement(navSignIn);
+    }
+
     public WebElement getHammer(){
         return driver.findElement(hammer);
     }
@@ -84,6 +90,9 @@ public class HomePage {
 
     public  WebElement getPlier(){
         return driver.findElement(pliers);
+    }
+    public  WebElement getCombinationPlier(){
+        return driver.findElement(combinationPlier);
     }
 
     public WebElement getChisel(){
