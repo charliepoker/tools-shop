@@ -1,12 +1,16 @@
 package com.achor.pageObjects;
 
 
+import com.achor.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class RegisterPage {
+import java.io.IOException;
+import java.util.Base64;
+
+public class RegisterPage extends BasePage {
 
     public WebDriver driver;
 
@@ -24,60 +28,70 @@ public class RegisterPage {
     By register = By.cssSelector(".btnSubmit.mb-3");
 
 
-    public RegisterPage(WebDriver driver){
-        this.driver = driver;
+    public RegisterPage() throws IOException {
+        super();
     }
 
-    public WebElement getFirstName(){
+    public WebElement getFirstName() throws IOException{
+        this.driver = getDriver();
         return driver.findElement(firstName);
     }
 
-    public WebElement getLastName(){
+    public WebElement getLastName() throws IOException{
+        this.driver = getDriver();
         return driver.findElement(lastName);
     }
 
-    public WebElement getDob(){
+    public WebElement getDob() throws IOException{
+        this.driver = getDriver();
         return driver.findElement(dob);
     }
 
-    public WebElement getAddress(){
+    public WebElement getAddress() throws IOException{
+        this.driver = getDriver();
         return driver.findElement(address);
     }
 
-    public WebElement getPostCode(){
+    public WebElement getPostCode() throws IOException{
+        this.driver = getDriver();
         return driver.findElement(postCode);
     }
 
-    public WebElement getCity() {
+    public WebElement getCity() throws IOException {
+        this.driver = getDriver();
         return driver.findElement(city);
     }
 
-    public WebElement getState() {
+    public WebElement getState() throws IOException {
+        this.driver = getDriver();
         return driver.findElement(state);
     }
 
-    public void getCountry(){
+    public void getCountry() throws IOException{
+        this.driver = getDriver();
 
-
-//      return driver.findElement(country);
         Select country = new Select(driver.findElement(this.country));
         country.selectByVisibleText("Canada");
 
     }
 
-    public  WebElement getPhone(){
+    public  WebElement getPhone() throws IOException{
+        this.driver = getDriver();
         return driver.findElement(phone);
     }
 
-    public WebElement getEmail(){
+    public WebElement getEmail() throws IOException{
+        this.driver = getDriver();
         return driver.findElement(email);
     }
 
-    public WebElement getPassword(){
+    public WebElement getPassword() throws IOException{
+        this.driver = getDriver();
         return driver.findElement(password);
     }
 
-    public  WebElement getRegister(){
+    public  WebElement getRegister() throws IOException{
+        this.driver = getDriver();
         return driver.findElement(register);
     }
 

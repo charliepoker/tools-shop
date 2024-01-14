@@ -1,10 +1,13 @@
 package com.achor.pageObjects;
 
+import com.achor.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class SignInPage {
+import java.io.IOException;
+
+public class SignInPage extends BasePage {
 
     public WebDriver driver;
 
@@ -15,31 +18,37 @@ public class SignInPage {
     By register = By.linkText("Register your account");
     By forgotPassword = By.cssSelector(".ForgetPwd");
 
-    public SignInPage(WebDriver driver){
-        this.driver = driver;
+    public SignInPage() throws IOException {
+        super();
     }
 
-    public WebElement getSignInWithGoogle(){
+    public WebElement getSignInWithGoogle() throws IOException {
+        this.driver = getDriver();
         return driver.findElement(signInWithGoogle);
     }
 
-    public WebElement getEmail(){
+    public WebElement getEmail() throws IOException{
+        this.driver = getDriver();
         return driver.findElement(email);
     }
 
-    public WebElement getPassword(){
+    public WebElement getPassword() throws IOException{
+        this.driver = getDriver();
         return driver.findElement(password);
     }
 
-    public WebElement getLogin(){
+    public WebElement getLogin() throws IOException{
+        this.driver = getDriver();
         return driver.findElement(login);
     }
 
-    public WebElement getRegister(){
+    public WebElement getRegister() throws IOException{
+        this.driver = getDriver();
         return driver.findElement(register);
     }
 
-    public WebElement getForgotPassword(){
+    public WebElement getForgotPassword() throws IOException{
+        this.driver = getDriver();
         return driver.findElement(forgotPassword);
     }
 

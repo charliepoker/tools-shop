@@ -1,6 +1,7 @@
 package com.achor;
 
 import com.achor.base.BasePage;
+import com.achor.base.Hooks;
 import com.achor.pageObjects.HomePage;
 import com.achor.pageObjects.RegisterPage;
 import com.achor.pageObjects.SignInPage;
@@ -10,34 +11,24 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class RegisterUserTest extends BasePage {
+public class RegisterUserTest extends Hooks {
 
     public RegisterUserTest() throws IOException {
         super();
     }
 
-    @BeforeTest
-    public void setUp() throws IOException{
-        driver = getDriver();
-        driver.get(getUrl());
-        driver.manage().window().maximize();
 
-    }
 
-    @AfterTest
-    public void tearDown(){
-        driver.close();
-        driver = null;
-    }
+
 
     @Test
-    public void registerTest() throws InterruptedException {
-        HomePage homePage = new HomePage(driver);
-        RegisterPage registerPage = new RegisterPage(driver);
+    public void registerTest() throws InterruptedException, IOException {
+        HomePage homePage = new HomePage();
+        RegisterPage registerPage = new RegisterPage();
         homePage.getNavSignIn().click();
         Thread.sleep(6000);
 
-        SignInPage signInPage = new SignInPage(driver);
+        SignInPage signInPage = new SignInPage();
         signInPage.getRegister().click();
         registerPage.getFirstName().sendKeys("Obinna");
         registerPage.getLastName().sendKeys("Iheanacho");
